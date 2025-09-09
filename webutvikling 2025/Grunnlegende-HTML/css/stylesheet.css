@@ -21,6 +21,10 @@ article{margin: 1rem 0;
     max-width: 400px;
     width: 100%;
     min-width: 250px;
+    padding: 1rem;
+    img{
+        width: 100%;
+    }
 
 }
 
