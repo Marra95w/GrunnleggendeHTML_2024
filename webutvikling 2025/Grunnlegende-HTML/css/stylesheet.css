@@ -1,5 +1,29 @@
+:root{
+    --basic-grey: #858585;
+    --basic-red: #ba0000;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+}
+
+/*------Global header--------*/
+#global-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    nav{
+        ul{
+            padding:0;
+            margin:0;
+            li{
+                list-style: none;
+                display: inline-block;
+            } 
+        }
+    }
 }
 #mainlogo{
     font-size: 30px;
@@ -13,6 +37,11 @@ body{
 a{
     color: #000;
     text-decoration: none;
+}
+/*HERO-section*/
+.deal-section{
+    background-color: var(--basic-grey);
+    padding: 1rem; 
 }
 /* hovedinnhold*/
 
@@ -33,4 +62,5 @@ article{margin: 1rem 0;
     background-color: #000;
     color:#fff;
     padding: 1rem;
+    border: none;
 }
