@@ -2,6 +2,10 @@
     --basic-grey: #858585;
     --basic-red: #ba0000;
 }
+/*---------Stjerne er universell(gjelder alt i dokumentet)-----------*/
+*{
+    box-sizing:border-box;
+}
 
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -38,12 +42,49 @@ a{
     color: #000;
     text-decoration: none;
 }
-/*HERO-section*/
+/*---------HERO-section-----------*/
 .deal-section{
-    background-color: var(--basic-grey);
-    padding: 1rem; 
+    background-image: url("https://picsum.photos/1200/1200?grayscale");
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color:var(--basic-grey);
+    padding: 1rem; /*Hva gir luft til elementet*/
+    position: relative;
+    height: 50vh;
+    min-height: 200px;
 }
+    /* Grisete jobb lenger ned
+    img{
+        width: 100%;
+    }
+
+    h2, p, a{
+         position: absolute; 
+    }
+    p{
+        top:63px;
+    }
+    a{
+        top:160px;
+    }
+}
+    */
 /* hovedinnhold*/
+main{
+    max-width: 1200px;
+    width:100%;
+    margin: 2rem auto;
+
+    section{
+        h2{
+            text-align: center; 
+        }
+        article{
+            margin: 0 auto; 
+        }
+    }
+}
 
 article{margin: 1rem 0;
     border: 1px solid #efefef;
@@ -64,3 +105,30 @@ article{margin: 1rem 0;
     padding: 1rem;
     border: none;
 }
+.side-container{
+    background-color:var(--basic-grey);
+    padding:1rem;
+
+    form{
+
+        input{
+            display:block;
+            padding:1rem;
+            margin:0.4rem 0;
+        }
+    }
+
+}
+
+.age-check{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+footer{
+    background-color: #232425;
+    color:#fff;
+    padding: 1rem; 
+    min-height:150px;
+}
+
