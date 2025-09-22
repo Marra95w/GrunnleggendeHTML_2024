@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root{
     --basic-grey: #6c6c6c;
     --basic-red: #ba0000;
-}
+    }
 /*---------Stjerne er universell(gjelder alt i dokumentet)-----------*/
 *{
     box-sizing:border-box;
-}
+    }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Funnel Sans", sans-serif;
     margin:0;
 }
 #page-container{
@@ -35,6 +37,13 @@ body{
     grid-row-start: 1;
     grid-row-end: 2;
 
+    .fa-bars{
+        inline-size: block;
+    }
+{
+    display:none;
+}
+
     nav{
         ul{
             padding:0;
@@ -47,19 +56,21 @@ body{
 }
 #mainlogo{
     font-size: 30px;
-  font-family: arial, Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   color: #5f5858;
   text-decoration: none;
    color: black;
 }
 
-a{
+a
+{
     color: #000;
     text-decoration: none;
 }
 /*---------HERO-section-----------*/
-.deal-section{
+.deal-section
+{
     background-image: url("https://picsum.photos/1200/1200?grayscale");
     background-repeat:no-repeat;
     background-size: cover;
@@ -93,7 +104,8 @@ a{
 }
     */
 /* hovedinnhold*/
-main{
+main
+{
     max-width: 1200px;
     width:100%;
     margin: 2rem auto;
@@ -104,7 +116,8 @@ main{
     grid-row-start:3;
     grid-row-end:4;
 
-    section{
+    section
+    {
         h2{
             text-align: center; 
         }
@@ -114,17 +127,27 @@ main{
     }
 }
 
-article{margin: 1rem 0;
+article
+{   margin: 1rem 0;
     border: 1px solid #efefef;
-    max-width: 400px;
-    width: 100%;
+    width: 31%;
     min-width: 250px;
     padding: 1rem;
-    img{
+    flex-grow: 1;
+    
+    article img{
         width: 100%;
+        height: auto;
     }
 
 }
+.category-card
+{
+    width: 33%;
+    flex-grow: 0;
+
+}
+
 
 .btn{
     display: inline-block;
@@ -133,7 +156,8 @@ article{margin: 1rem 0;
     padding: 2rem;
     border: none;
 }
-.side-container{
+.side-container
+{
     background-color:var(--basic-grey);
     padding:1rem;
    
@@ -173,7 +197,8 @@ footer{
 
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px)
+{
 
     #page-container{
         grid-template-columns: 1fr 1fr 0.5fr;
@@ -189,7 +214,13 @@ footer{
     #global-header{
         grid-column-end:4;
     }
-    .deal-section:{
+
+    .fa-bars
+    {
+        display:none;
+    }
+    .deal-section
+    {
         grid-column-end:4;
 
     }
@@ -197,6 +228,42 @@ footer{
     main{
         grid-column-end:3;
     }
+    article
+    {
+    margin: 1rem 0;
+    border: 1px solid #514f4f;
+    width: 31%;
+    min-width: 250px;
+    padding: 1rem;
+    flex: grow 1;
+    max-width: 800px;
+    
+    }
+    /*article img{
+        width: 100%;
+        height: auto;
+    }*/
+
+    
+    .category-card{
+    width: 33%;
+    flex-grow: 0;
+    
+    
+    }
+
+    .grow-1
+    {
+        flex-grow: 1;
+    }
+
+    .grow-2
+    {
+    flex-grow: 2;
+    }
+
+    
+
     .side-container{
         grid-column-start:3;
         grid-column-end:4;
@@ -211,7 +278,8 @@ footer{
 
 }
 
-.flex-container{
+.flex-container
+{
     display:flex;
     flex-wrap: wrap;
     gap:0.5rem;
@@ -223,13 +291,15 @@ footer{
     article{
         min-width: 200px !important;
         margin: 0;
-        flex-grow: 1;
     }
 }
 
-section.flex-grow{
+
+section.flex-grow-1
+{
     justify-content: flex-start;
-    
+}
+ /*   
     article{
         max-width: 900px;
         min-width: 200px;
@@ -247,4 +317,12 @@ section.flex-grow{
 
 .grow-2{
     flex-grow: 3;
+}
+    */
+
+.fa-bars
+{
+    font-size:30px;
+    color:#ba0000;
+    font-weight:600;
 }
