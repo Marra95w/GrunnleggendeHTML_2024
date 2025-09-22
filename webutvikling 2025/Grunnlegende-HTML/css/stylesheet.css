@@ -1,5 +1,5 @@
 :root{
-    --basic-grey: #858585;
+    --basic-grey: #6c6c6c;
     --basic-red: #ba0000;
 }
 /*---------Stjerne er universell(gjelder alt i dokumentet)-----------*/
@@ -11,6 +11,17 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
 }
+#page-container{
+    display:grid;
+    /*grid-template-areas: "header" 
+                         "hero" 
+                         "main" 
+                         "aside" 
+                         "footer";*/
+    grid-template-columns:1fr; 
+    grid-template-rows:auto auto auto auto auto;
+
+}
 
 /*------Global header--------*/
 #global-header{
@@ -18,13 +29,18 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    /*grid-area:header;*/
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
     nav{
         ul{
             padding:0;
-            margin:0;
             li{
                 list-style: none;
-                display: inline-block;
+
             } 
         }
     }
@@ -53,6 +69,12 @@ a{
     position: relative;
     height: 50vh;
     min-height: 200px;
+    grid-area: hero;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:2;
+    grid-row-end:3;
 }
     /* Grisete jobb lenger ned
     img{
@@ -75,6 +97,12 @@ main{
     max-width: 1200px;
     width:100%;
     margin: 2rem auto;
+    grid-area:main; 
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start:3;
+    grid-row-end:4;
 
     section{
         h2{
@@ -102,12 +130,18 @@ article{margin: 1rem 0;
     display: inline-block;
     background-color: #000;
     color:#fff;
-    padding: 1rem;
+    padding: 2rem;
     border: none;
 }
 .side-container{
     background-color:var(--basic-grey);
     padding:1rem;
+   
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start:4;
+    grid-row-end:5;
 
     form{
 
@@ -130,5 +164,87 @@ footer{
     color:#fff;
     padding: 1rem; 
     min-height:150px;
+    grid-column-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    grid-row-start:5;
+    grid-row-end:6;
+
 }
 
+@media only screen and (min-width: 600px){
+
+    #page-container{
+        grid-template-columns: 1fr 1fr 0.5fr;
+        grid-template-rows:repeat(4, auto);
+        /*grid-template-areas:"header header header"
+                            "hero hero hero"
+                            "main main asaide"
+                            "footer footer footer";
+        grid-template-columns: 1fr 1fr 0.5fr; */
+                        
+    }
+
+    #global-header{
+        grid-column-end:4;
+    }
+    .deal-section:{
+        grid-column-end:4;
+
+    }
+
+    main{
+        grid-column-end:3;
+    }
+    .side-container{
+        grid-column-start:3;
+        grid-column-end:4;
+        grid-row-start:3;
+        grid-row-end:4;
+    }
+    footer{
+        grid-column-end:4;
+        grid-row-start:4;
+        grid-row-end:5;
+    }
+
+}
+
+.flex-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap:0.5rem;
+    justify-content: center;
+
+    h2{
+        width: 100%;
+    }
+    article{
+        min-width: 200px !important;
+        margin: 0;
+        flex-grow: 1;
+    }
+}
+
+section.flex-grow{
+    justify-content: flex-start;
+    
+    article{
+        max-width: 900px;
+        min-width: 200px;
+        width: 31%; 
+
+    }
+    aricle.grow-1{
+        flex-grow: 2;
+    }
+}
+
+.grow-1{
+    flex-grow: 2;
+}
+
+.grow-2{
+    flex-grow: 3;
+}
